@@ -51,29 +51,7 @@ row.insertCell(1).textContent=data[i].id;
         
     
 }
-function checkData(){
-    console.log("It runs now");
-    fetch("https://api.github.com/users/zubair/followers").then(function(response){
-      caches.open("dynamic-data-2").then(function(my_cach){
-my_cach.put("https://api.github.com/users/zubair/followers",response);
-console.log("Response added successfully");
-caches.match("https://api.github.com/users/zubair/followers").then(function(respond){
-respond.text().then(function(text){console.log(text);})
 
-})
-      });
-
-    });
-/*
-caches.match("https://api.github.com/users/john/followers").then(
-    function(response){
-        response.json().then(function(text){
-            console.log(text);
-        })
-    }
-);*/
-
-}
 
 function getData(response){
     var r=document.querySelector("input").value;
